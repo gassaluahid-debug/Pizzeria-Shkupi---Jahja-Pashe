@@ -11,9 +11,10 @@
         :root {
             --primary-color: #d61c1c; 
             --accent-color: #f77f00; 
-            --main-theme-color: #3e2723; /* Ngjyra e drurit të errët për sfond dhe karta */
+            --main-theme-color: #3e2723; 
             --card-border: #4e342e;
             --text-light: #ffffff;
+            --call-green: #28a745; /* Ngjyra e gjelbër për telefonatën */
         }
 
         * {
@@ -24,48 +25,53 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: var(--main-theme-color); /* Sfondi njëjtë me kartat */
+            background-color: var(--main-theme-color); 
             color: var(--text-light);
             line-height: 1.6;
         }
 
-        /* HEADER */
+        /* HEADER I PËRMIRËSUAR */
         .header {
             position: sticky;
             top: 0;
-            background: rgba(30, 20, 18, 0.95);
+            background: rgba(30, 20, 18, 0.98);
             backdrop-filter: blur(10px);
-            padding: 15px;
+            padding: 10px 8px;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.4);
         }
 
         .contact-buttons {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             max-width: 1200px;
             margin: 0 auto;
             justify-content: center;
         }
 
         .btn-top {
-            padding: 8px 18px;
-            border-radius: 50px;
+            flex: 1; /* I mban butonat me madhësi të barabartë */
+            padding: 10px 5px;
+            border-radius: 10px;
             text-decoration: none;
-            font-size: 13px;
-            font-weight: 600;
+            font-size: 11px; /* Madhësi ideale për iPhone dhe ekranet e tjerë */
+            font-weight: 700;
             color: white;
             transition: 0.3s;
-            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
         }
 
-        .btn-call { background: var(--primary-color); }
+        .btn-call { background: var(--call-green); }
         .btn-fb { background: #1877f2; }
         .btn-ig { background: #e1306c; }
 
         .btn-top:hover {
-            transform: translateY(-2px);
-            filter: brightness(1.1);
+            opacity: 0.9;
+            transform: translateY(-1px);
         }
 
         /* LOGO SECTION */
@@ -115,7 +121,7 @@
 
         /* PIZZA CARD */
         .pizza-card {
-            background: var(--main-theme-color); /* Ngjyra e kartës njëjtë me sfondin */
+            background: var(--main-theme-color); 
             border-radius: 25px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -156,7 +162,6 @@
             justify-content: space-between;
         }
 
-        /* EMRI I PICES ME MONTSERRAT DHE I BARDHË */
         .pizza-info h3 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
@@ -166,7 +171,6 @@
             text-transform: uppercase;
         }
 
-        /* PRICES */
         .price-tag {
             display: flex;
             justify-content: center;
@@ -194,7 +198,6 @@
             font-size: 18px;
         }
 
-        /* ORDER BUTTON */
         .order-now {
             display: inline-flex;
             align-items: center;
@@ -215,8 +218,9 @@
             color: var(--primary-color);
         }
 
-        /* RESPONSIVE */
+        /* RESPONSIVE FIX FOR SMALLER SCREENS */
         @media (max-width: 480px) {
+            .btn-top { font-size: 10px; padding: 10px 2px; }
             .logo-section h1 { font-size: 32px; }
             .menu { grid-template-columns: 1fr; }
         }
@@ -227,7 +231,7 @@
 
 <header class="header">
     <div class="contact-buttons">
-        <a href="tel:+38970945985" class="btn-top btn-call">📞 Porosit: 070 945 985</a>
+        <a href="tel:+38970945985" class="btn-top btn-call">📞 Kontakti</a>
         <a href="https://www.facebook.com/share/1JCn7MZuHd/?mibextid=wwXIfr" target="_blank" class="btn-top btn-fb">Facebook</a>
         <a href="https://www.instagram.com/pizza_shkupi_jahjapasha?igsh=aTVzb3VhNWZqZDhy" target="_blank" class="btn-top btn-ig">Instagram</a>
     </div>
